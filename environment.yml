@@ -1,0 +1,23 @@
+name: env_up_ml2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - scikit-learn
+  - pandas
+  - numpy
+  - xgboost
+  - optuna
+  - keras
+  - tensorflow 
+  - matplotlib
+  - seaborn
+  - ipykernel
+  - shap
+  - pyarrow
+  - pip
+  - streamlit
+  - joblib
+  - pip:
+    - jupyter
