@@ -8,14 +8,14 @@ warnings.filterwarnings('ignore')
 
 
 def plot_density(prediction, y_test):
-
     df = pd.DataFrame({'Score': prediction, 'Status': y_test})
     palette = {0: 'orange', 1: 'blue'}
     
     g = sns.FacetGrid(df, hue="Status", palette=palette, height=5, aspect=1.5)
-    g.map(sns.kdeplot, 'Score', fill=True, common_norm=True, alpha=0.5).add_legend()
-    g.set_axis_labels("Score", "Density")
+    g.map(sns.kdeplot, 'Score', fill=True, common_norm=True, alpha=0.5, bw_adjust=0.6).add_legend()  
+    g.set(xlim=(0, 1))
     
+    g.set_axis_labels("Score", "Density")
     plt.title("Score Distribution by Status", fontsize=16)
     plt.show()
 
